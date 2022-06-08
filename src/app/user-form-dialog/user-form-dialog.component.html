@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>{{popupTitle}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="legacy">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" matInput placeholder="First Name" [ngClass]="{ 'is-invalid': submitted  || f['firstName'].errors || f['firstName'].dirty || f['firstName'].touched}" >
+        </mat-form-field>
+        <div *ngIf="f['firstName'].errors &&(f['firstName'].dirty || f['firstName'].touched)" class="invalid-feedback">
+            <div *ngIf="f['firstName'].errors ">first Name is required</div>
+        </div>
+
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" matInput placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted  ||  f['lastName'].errors || f['lastName'].dirty || f['lastName'].touched}" >
+        </mat-form-field>
+        <div *ngIf="f['lastName'].errors &&(f['lastName'].dirty || f['lastName'].touched)" class="invalid-feedback">
+            <div *ngIf="f['lastName'].errors ">last Name is required</div>
+        </div>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Login</mat-label>
+            <input formControlName="login"matInput placeholder="Login" [ngClass]="{ 'is-invalid': submitted  || f['login'].errors || f['login'].dirty || f['login'].touched}">
+        </mat-form-field>
+        <div *ngIf="f['login'].errors &&(f['login'].dirty || f['login'].touched)" class="invalid-feedback">
+            <div *ngIf="f['login'].errors ">login is required</div>
+        </div>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput placeholder="email.external@airbus.com" [ngClass]="{ 'is-invalid': submitted  || f['email'].errors || f['email'].dirty || f['email'].touched}">
+        </mat-form-field>
+        <div *ngIf="f['email'].errors &&(f['email'].dirty || f['email'].touched)" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required'] ">email is required</div>
+            <div *ngIf="f['email'].errors['email'] ">email format</div>
+        </div>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select role</mat-label>
+            <mat-select formControlName="role" placeholder="role" [ngClass]="{ 'is-invalid': submitted  || f['role'].errors || f['role'].dirty || f['role'].touched}">
+              <mat-option *ngFor="let role of rightList" [value]="role">{{ role }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div *ngIf="f['role'].errors &&(f['role'].dirty || f['role'].touched)" class="invalid-feedback">
+            <div *ngIf="f['role'].errors ">role is required</div>
+        </div>
+
+
+        <mat-form-field appearance="legacy" *ngIf="actionButton !== 'Save'">
+            <mat-label>Creation Date</mat-label>
+            <input matInput placeholder="creation date"  value="{{currentCreationDate | date:'dd/MM/yyyy'}}" readonly>
+        </mat-form-field>
+        
+    </form>
+</div>
+
+<div mat-dialog-action style="display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 10px;" mat-raised-button color="primary" (click)="addUser()">{{actionButton}}</button>
+</div>
+

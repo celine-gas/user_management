@@ -1,0 +1,8 @@
+<p>confirmation-popup works!</p>
+<div mat-dialog-action style="display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;">
+    <p>Are you sure you want to remove the user with id :  {{ id }} ?</p>
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 10px;" mat-raised-button color="primary"  (click)="confirmationDeleteUser()">Yes</button>
+</div>

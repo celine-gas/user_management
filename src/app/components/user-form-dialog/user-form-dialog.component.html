@@ -1,4 +1,5 @@
 <h1 mat-dialog-title>{{popupTitle}}</h1>
+
 <div mat-dialog-content>
     <form [formGroup]="userForm">
         <mat-form-field appearance="legacy">
@@ -27,7 +28,7 @@
 
         <mat-form-field appearance="legacy">
             <mat-label>Email</mat-label>
-            <input formControlName="email" matInput placeholder="email.external@airbus.com" [ngClass]="{ 'is-invalid': submitted || f['email'].errors || f['email'].dirty || f['email'].touched}">
+            <input formControlName="email" matInput placeholder="email@domain.com" [ngClass]="{ 'is-invalid': submitted || f['email'].errors || f['email'].dirty || f['email'].touched}">
         </mat-form-field>
         <div *ngIf="submitted || f['email'].dirty || f['email'].touched">
             <div *ngIf="f['email'].errors"  class="invalid-feedback">
@@ -35,11 +36,6 @@
                 <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
             </div>
         </div>
-
-
-
-
-
 
         <mat-form-field appearance="fill">
             <mat-label>Select role</mat-label>
@@ -50,7 +46,6 @@
         <div *ngIf="(f['role'].errors && submitted) || (f['role'].dirty || f['role'].touched)" class="invalid-feedback">
             <div *ngIf="f['role'].errors ">Role is required</div>
         </div>
-
 
         <mat-form-field appearance="legacy" *ngIf="actionButton !== 'Save'">
             <mat-label>Creation Date</mat-label>

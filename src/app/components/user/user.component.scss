@@ -1,0 +1,20 @@
+table {
+  width: 100%;
+}
+  
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.container{
+    max-width: 80%;
+    margin: 50px auto;
+}
+section{
+  display: flex;
+  align-items: baseline;
+}
+.addUserBtn, mat-form-field{
+  margin: 0 30px;
+}
+  

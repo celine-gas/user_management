@@ -1,7 +1,7 @@
 import { Component, Input, OnInit,ViewChild } from '@angular/core';
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../../services/api.service';
 import { UserFormDialogComponent } from '../user-form-dialog/user-form-dialog.component';
-import { IUser } from '../models/user.interface';
+import { IUser } from '../../models/user.interface';
 
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';

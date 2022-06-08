@@ -5,35 +5,40 @@
             <mat-label>First Name</mat-label>
             <input formControlName="firstName" matInput placeholder="First Name" [ngClass]="{ 'is-invalid': submitted  || f['firstName'].errors || f['firstName'].dirty || f['firstName'].touched}" >
         </mat-form-field>
-        <div *ngIf="f['firstName'].errors &&(f['firstName'].dirty || f['firstName'].touched)" class="invalid-feedback">
-            <div *ngIf="f['firstName'].errors ">first Name is required</div>
+        <div *ngIf="(f['firstName'].errors && submitted) || (f['firstName'].dirty || f['firstName'].touched)" class="invalid-feedback">
+            <div *ngIf="f['firstName'].errors ">First name is required</div>
         </div>
-
 
         <mat-form-field appearance="legacy">
             <mat-label>Last Name</mat-label>
             <input formControlName="lastName" matInput placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted  ||  f['lastName'].errors || f['lastName'].dirty || f['lastName'].touched}" >
         </mat-form-field>
-        <div *ngIf="f['lastName'].errors &&(f['lastName'].dirty || f['lastName'].touched)" class="invalid-feedback">
-            <div *ngIf="f['lastName'].errors ">last Name is required</div>
+        <div *ngIf="(f['lastName'].errors && submitted) || (f['lastName'].dirty || f['lastName'].touched)" class="invalid-feedback">
+            <div *ngIf="f['lastName'].errors ">Last name is required</div>
         </div>
 
         <mat-form-field appearance="legacy">
             <mat-label>Login</mat-label>
             <input formControlName="login"matInput placeholder="Login" [ngClass]="{ 'is-invalid': submitted  || f['login'].errors || f['login'].dirty || f['login'].touched}">
         </mat-form-field>
-        <div *ngIf="f['login'].errors &&(f['login'].dirty || f['login'].touched)" class="invalid-feedback">
-            <div *ngIf="f['login'].errors ">login is required</div>
+        <div *ngIf="(f['login'].errors && submitted) || (f['login'].dirty || f['login'].touched)" class="invalid-feedback">
+            <div *ngIf="f['login'].errors">Login is required</div>
         </div>
 
         <mat-form-field appearance="legacy">
             <mat-label>Email</mat-label>
-            <input formControlName="email" matInput placeholder="email.external@airbus.com" [ngClass]="{ 'is-invalid': submitted  || f['email'].errors || f['email'].dirty || f['email'].touched}">
+            <input formControlName="email" matInput placeholder="email.external@airbus.com" [ngClass]="{ 'is-invalid': submitted || f['email'].errors || f['email'].dirty || f['email'].touched}">
         </mat-form-field>
-        <div *ngIf="f['email'].errors &&(f['email'].dirty || f['email'].touched)" class="invalid-feedback">
-            <div *ngIf="f['email'].errors['required'] ">email is required</div>
-            <div *ngIf="f['email'].errors['email'] ">email format</div>
+        <div *ngIf="submitted || f['email'].dirty || f['email'].touched">
+            <div *ngIf="f['email'].errors"  class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
+            </div>
         </div>
+
+
+
+
 
 
         <mat-form-field appearance="fill">
@@ -42,8 +47,8 @@
               <mat-option *ngFor="let role of rightList" [value]="role">{{ role }}</mat-option>
             </mat-select>
         </mat-form-field>
-        <div *ngIf="f['role'].errors &&(f['role'].dirty || f['role'].touched)" class="invalid-feedback">
-            <div *ngIf="f['role'].errors ">role is required</div>
+        <div *ngIf="(f['role'].errors && submitted) || (f['role'].dirty || f['role'].touched)" class="invalid-feedback">
+            <div *ngIf="f['role'].errors ">Role is required</div>
         </div>
 
 

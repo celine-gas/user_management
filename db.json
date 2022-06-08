@@ -21,7 +21,7 @@
       "firstName": "jamila",
       "lastName": "jamila",
       "login": "jamila",
-      "email": "jamila",
+      "email": "jamila@mail.com",
       "role": "Project Leader",
       "creationDate": "2022-06-07T13:04:19.567Z",
       "id": 3
@@ -43,24 +43,6 @@
       "role": "User",
       "creationDate": "2022-06-07T13:04:54.614Z",
       "id": 5
-    },
-    {
-      "firstName": "ce",
-      "lastName": "1234",
-      "login": "celin@gmail.com",
-      "email": "vincent3@fezjin.com",
-      "role": "Project Leader",
-      "creationDate": "2022-06-07T13:29:39.508Z",
-      "id": 6
-    },
-    {
-      "firstName": "de",
-      "lastName": "de",
-      "login": "de",
-      "email": "de@fes.ce",
-      "role": "User",
-      "creationDate": "2022-06-07T14:23:41.056Z",
-      "id": 7
     }
   ],
   "comments": [

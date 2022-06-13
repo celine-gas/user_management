@@ -14,7 +14,7 @@ export class RoleGuardGuard implements CanActivate {
   
   //renvoie true si le role en cours (expectedrole) est dans la liste des role
   isAuthorized(route: ActivatedRouteSnapshot): boolean{
-    const roles = ['Admin']; //role de l'utilisateur courant
+    const roles = ['Admin']; //role de l'utilisateur courant local Storage
     const expectedRoles = route.data['expectedRoles'];
     const rolesMatches = roles.findIndex(role => expectedRoles.indexOf(role) !== -1);
     return (rolesMatches < 0 )? false : true;

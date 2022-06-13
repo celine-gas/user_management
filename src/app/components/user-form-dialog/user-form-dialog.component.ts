@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; 
 import { DatePipe } from '@angular/common';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-user-form-dialog',
@@ -17,6 +17,8 @@ export class UserFormDialogComponent implements OnInit {
   userForm !: FormGroup; 
   actionButton:  string = "Save";
   currentCreationDate : Date = new Date();
+  currentIsActivated: boolean = false;
+  currentPassword: string = "A";
   popupTitle: string = "New User";
   submitted: boolean = false;
 
@@ -32,23 +34,28 @@ export class UserFormDialogComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      login: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
       creationDate: [''],
+      isActivated: [''],
+      password: ['']
     })
     
     if(this.editData){
       this.submitted = false;
       this.popupTitle = "Update User"
       this.currentCreationDate = this.editData.creationDate;
+      this.currentIsActivated = this.editData.isActivated;
+      this.currentPassword = this.editData.password;
+
       this.actionButton = "Update";
       this.userForm.controls['firstName'].setValue(this.editData.firstName);
       this.userForm.controls['lastName'].setValue(this.editData.lastName);
-      this.userForm.controls['login'].setValue(this.editData.login);
       this.userForm.controls['email'].setValue(this.editData.email);
       this.userForm.controls['role'].setValue(this.editData.role);
       this.userForm.controls['creationDate'].setValue(this.editData.creationDate);
+      this.userForm.controls['isActivated'].setValue(this.editData.isActivated);
+      this.userForm.controls['password'].setValue(this.editData.password);
     }
   }
 
@@ -90,4 +97,10 @@ export class UserFormDialogComponent implements OnInit {
     
   }
 
+  updatePassword(){
+    let elt = document.getElementById("test");
+    if(elt){
+      elt.removeAttribute("readonly");
+    }
+  }
 }

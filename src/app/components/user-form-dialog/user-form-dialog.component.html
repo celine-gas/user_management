@@ -19,14 +19,6 @@
         </div>
 
         <mat-form-field appearance="legacy">
-            <mat-label>Login</mat-label>
-            <input formControlName="login"matInput placeholder="Login" [ngClass]="{ 'is-invalid': submitted  || f['login'].errors || f['login'].dirty || f['login'].touched}">
-        </mat-form-field>
-        <div *ngIf="(f['login'].errors && submitted) || (f['login'].dirty || f['login'].touched)" class="invalid-feedback">
-            <div *ngIf="f['login'].errors">Login is required</div>
-        </div>
-
-        <mat-form-field appearance="legacy">
             <mat-label>Email</mat-label>
             <input formControlName="email" matInput placeholder="email@domain.com" [ngClass]="{ 'is-invalid': submitted || f['email'].errors || f['email'].dirty || f['email'].touched}">
         </mat-form-field>
@@ -51,7 +43,28 @@
             <mat-label>Creation Date</mat-label>
             <input matInput placeholder="creation date"  value="{{currentCreationDate | date:'dd/MM/yyyy'}}" readonly>
         </mat-form-field>
+
+        <mat-form-field appearance="legacy" *ngIf="actionButton !== 'Save'">
+            <mat-label>isActivated</mat-label>
+            <input matInput placeholder="isActivated"  value="{{currentIsActivated}}" readonly>
+        </mat-form-field>
         
+        <mat-grid-list cols="2" rowHeight="3:1">
+            <mat-grid-tile>
+                <mat-form-field appearance="legacy" >
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" placeholder="Password" id="test" value="{{currentPassword}}" [readonly]="actionButton === 'Update'">
+
+            </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile *ngIf="actionButton !== 'Save'" >
+                <button mat-icon-button color="warn" aria-label="updatePassword" (click)="updatePassword()">
+                    <mat-icon>update</mat-icon>
+                </button>
+            </mat-grid-tile>
+        </mat-grid-list>
+
     </form>
 </div>
 

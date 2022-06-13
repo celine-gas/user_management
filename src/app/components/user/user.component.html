@@ -36,6 +36,18 @@
         <td mat-cell *matCellDef="let row"> {{row.role}} </td>
       </ng-container>
 
+      <!-- isActivated Column -->
+      <ng-container matColumnDef="isActivated">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> is Activated </th>
+        <td mat-cell *matCellDef="let row"> {{row.isActivated}} </td>
+      </ng-container>
+
+      <!-- password Column -->
+      <ng-container matColumnDef="password">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
+        <td mat-cell *matCellDef="let row"> {{row.password}} </td>
+      </ng-container>
+
       <!-- Creation Date Column -->
       <ng-container matColumnDef="creationDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation date </th>

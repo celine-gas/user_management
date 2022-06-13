@@ -12,6 +12,7 @@ export class ApiService {
 
   postUser(data: any){
     data.creationDate = new Date();
+    data.isActivated = false;
     return this.http.post<any>(`${this.url}/userList`, data);
   }
 

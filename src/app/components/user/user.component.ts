@@ -19,7 +19,7 @@ import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-p
 export class UserComponent implements OnInit {
   @Input() currentUser!: IUser;
 
-  displayedColumns: string[] = ["id", "lastName", "firstName", "role", "creationDate", "action"];
+  displayedColumns: string[] = ["id", "lastName", "firstName", "role", "creationDate", "isActivated", "password", "action"];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

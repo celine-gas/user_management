@@ -3,37 +3,52 @@
     {
       "firstName": "celine",
       "lastName": "celine",
-      "login": "celine",
-      "email": "celine@mail.com",
+      "email": "celine@gmail.com",
       "role": "Admin",
+      "creationDate": "2021-12-11T09:13:51.868Z",
+      "isActivated": true,
+      "password": "azerty",
       "id": 1
     },
     {
       "firstName": "vincent",
       "lastName": "vincent",
-      "login": "vincent",
       "email": "vincent@mail.com",
       "role": "Project Leader",
-      "creationDate": "2022-05-30T19:08:47.802Z",
+      "creationDate": "2022-01-12T09:13:51.868Z",
+      "isActivated": false,
+      "password": "azerty",
       "id": 2
     },
     {
-      "firstName": "laurent",
-      "lastName": "laurent",
-      "login": "laurent",
-      "email": "laurent",
-      "role": "Project Leader",
-      "creationDate": "2022-06-07T13:04:43.870Z",
+      "firstName": "ludivine",
+      "lastName": "ludivine",
+      "email": "ludivine@mail.com",
+      "role": "User",
+      "creationDate": "2022-05-13T09:13:51.868Z",
+      "isActivated": false,
+      "password": "azerty1212",
+      "id": 3
+    },
+    {
+      "firstName": "clement",
+      "lastName": "clement",
+      "email": "clement@gmail.com",
+      "role": "User",
+      "creationDate": "2022-06-13T11:18:04.827Z",
+      "isActivated": false,
+      "password": "altran12",
       "id": 4
     },
     {
-      "firstName": "gerald",
-      "lastName": "gerald",
-      "login": "gerald",
-      "email": "gerald@dz",
-      "role": "Project Leader",
-      "creationDate": "2022-06-08T12:21:00.693Z",
-      "id": 6
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@mail.com",
+      "role": "Admin",
+      "creationDate": "2022-06-13T11:59:36.960Z",
+      "isActivated": false,
+      "password": "airbus",
+      "id": 5
     }
   ],
   "comments": [
